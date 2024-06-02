@@ -1,0 +1,49 @@
+@import "@/styles/theme.scss";
+
+.container {
+	@include width-height(100%, auto);
+	@include flex(row, center, center, 5px);
+	flex-wrap: wrap;
+	padding: 10px 0;
+	border-top: 1px solid $grey;
+	border-bottom: 1px solid $grey;
+	margin: 20px 0;
+	.text {
+		color: $text_second;
+		@include fontSize-fontWeight(14px, 500);
+	}
+	span {
+		color: $grey;
+		&:nth-of-type(2) {
+			display: none;
+			@media (width >= $queryLg) {
+				display: block;
+			}
+		}
+	}
+	.security {
+		@include flex(row, center, center, 5px);
+		.icon {
+			@include width-height(15px, auto);
+			object-fit: contain;
+		}
+		.text {
+			@include fontSize-fontWeight(13px, 500);
+			color: $text_second;
+		}
+	}
+	.img_container {
+		@include flex(row, center, center, 5px);
+		border-top: 1px solid $grey;
+		padding: 10px 0;
+		margin-top: 10px;
+		@media (width >= $querySm) {
+			margin: 0;
+			border: none;
+		}
+		.img {
+			@include width-height(35px, auto);
+			object-fit: contain;
+		}
+	}
+}

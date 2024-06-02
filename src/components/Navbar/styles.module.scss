@@ -1,0 +1,53 @@
+@import "@/styles/theme.scss";
+
+.nav {
+	@include width-height(100%, auto);
+	.header {
+		@include flex(row, space-between, center);
+		padding: 20px;
+		.link {
+			.main_logo {
+				@include width-height(140px, auto);
+				object-fit: contain;
+				@media (width >= $queryLg) {
+					width: 180px;
+				}
+			}
+		}
+		.partners {
+			@include flex(row, flex-end, center, 20px);
+			.logo {
+				@include width-height(35%, auto);
+				object-fit: contain;
+			}
+		}
+	}
+}
+
+@media (width >= $queryLg) {
+	.nav {
+		.header {
+			.main_logo {
+				width: 120px;
+				max-width: none;
+			}
+			.partners {
+				.logo {
+					width: 80px;
+				}
+			}
+		}
+	}
+}
+
+@media (width >= $queryXl) {
+	.nav {
+		.header {
+			padding: 20px 0;
+			.main_logo {
+				width: 150px;
+				max-width: none;
+			}
+		}
+	}
+}

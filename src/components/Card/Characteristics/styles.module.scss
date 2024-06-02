@@ -1,0 +1,35 @@
+@import "@/styles/theme.scss";
+
+.list_container {
+	@include width-height(100%, auto);
+	@include flex(column, center, flex-start, 10px);
+	list-style: none;
+	@media (width >= $queryLg) {
+		padding: 20px 0;
+	}
+	.feature {
+		@include flex(row, center, flex-end, 10px);
+		color: $text_second;
+		p {
+			@include flex(row, center, center, 5px);
+			@include fontSize-fontWeight(13px, 500);
+			.icon {
+				@include width-height(20px, auto);
+				object-fit: contain;
+			}
+			span {
+				font-weight: 700;
+			}
+			@media (width >= $queryLg) {
+				font-size: 16px;
+			}
+		}
+
+		&:nth-of-type(3) {
+			p {
+				display: flex;
+				flex-direction: row-reverse;
+			}
+		}
+	}
+}

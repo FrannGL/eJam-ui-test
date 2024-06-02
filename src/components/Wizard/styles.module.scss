@@ -1,0 +1,71 @@
+@import "@/styles/theme.scss";
+
+.wizard {
+	@include width-height(100%, auto);
+	@include flex(row, space-evenly, flex-start);
+	padding: 20px 0;
+	.step {
+		@include flex(column, center, center, 8px);
+		.icon {
+			@include width-height(30px, 30px);
+			object-fit: contain;
+		}
+		.circle {
+			@include width-height(30px, 30px);
+			@include flex(row, center, center, 8px);
+			border-radius: 50%;
+			color: #fff;
+			background: $blue;
+			&:nth-of-type(2) {
+				border: 1px solid $blue;
+			}
+		}
+		.text {
+			@include fontSize-fontWeight(12px, 400);
+			text-transform: capitalize;
+			@media (width >= $queryXs) {
+				font-size: 14px;
+			}
+		}
+		&:nth-of-type(3) {
+			.text {
+				font-weight: bold;
+			}
+		}
+		&:nth-of-type(4) {
+			.circle {
+				background: none;
+				color: $blue;
+				border: 2px solid $blue;
+			}
+		}
+	}
+}
+
+@media (width >= $queryLg) {
+	.wizard {
+		align-items: center;
+		.step {
+			flex-direction: row;
+			gap: 15px;
+			.icon,
+			.circle {
+				@include width-height(40px, 40px);
+			}
+			.text {
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+@media (width >= $queryXl) {
+	.wizard {
+		justify-content: space-between;
+		.step {
+			.text {
+				font-size: 18px;
+			}
+		}
+	}
+}

@@ -1,0 +1,92 @@
+@import "@/styles/theme.scss";
+
+.main_content {
+	@include width-height(100%, auto);
+	@include flex(row, flex-start, flex-start, 30px);
+	.image {
+		@include width-height(150px, auto);
+		object-fit: contain;
+		@media (width >= $queryLg) {
+			width: 200px;
+		}
+	}
+	.description_container {
+		@include width-height(100%, auto);
+		@include flex(column, center, flex-start, 15px);
+		position: relative;
+		.titles {
+			@include width-height(100%, auto);
+			@include flex(row, space-between, center);
+			.subtitle {
+				@include fontSize-fontWeight(14px, 400);
+				text-transform: capitalize;
+				@media (width >= $querySm) {
+					font-size: 18px;
+				}
+				@media (width >= $queryLg) {
+					font-size: 24px;
+				}
+			}
+			.price {
+				@include flex(row, center, center, 10px);
+				@include fontSize-fontWeight(18px, 600);
+				color: $blue;
+				@media (width >= $querySm) {
+					font-size: 24px;
+				}
+				@media (width >= $queryLg) {
+					font-size: 28px;
+				}
+				span {
+					@include fontSize-fontWeight(13px, 400);
+					color: $grey;
+					text-decoration: line-through;
+					@media (width >= $querySm) {
+						font-size: 20px;
+					}
+					@media (width >= $queryLg) {
+						font-size: 24px;
+					}
+				}
+			}
+		}
+		.qualification_container {
+			@include flex(row, center, center, 5px);
+			.star {
+				@include width-height(15px, auto);
+				object-fit: contain;
+			}
+		}
+		.stock_container {
+			@include flex(row, center, center, 20px);
+			.stock {
+				@include fontSize-fontWeight(16px, 400);
+			}
+		}
+		.description_small {
+			display: none;
+			@media (width >= $queryLg) {
+				display: block;
+				@include fontSize-fontWeight(13px, 400);
+				color: $text_second;
+			}
+		}
+	}
+	@media (width >= $queryXs) {
+		margin: 40px 0;
+	}
+	@media (width >= $querySm) {
+		padding-top: 50px;
+		margin: 0;
+	}
+}
+.description {
+	@include width-height(100%, auto);
+	@include fontSize-fontWeight(15px, 400);
+	padding: 20px 0;
+	text-align: center;
+	color: $text_second;
+	@media (width >= $queryLg) {
+		display: none;
+	}
+}

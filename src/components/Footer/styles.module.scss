@@ -1,0 +1,32 @@
+@import "@/styles/theme.scss";
+
+.footer {
+	@include width-height(100%, auto);
+	@include flex(column, space-between, center, 30px);
+	@include fontSize-fontWeight(12.5px, 300);
+	padding: 20px;
+	color: $white;
+	background: $bar;
+	.copyright {
+		@include flex(row, center, center, 10px);
+		a {
+			text-decoration: none;
+			color: $white;
+		}
+	}
+	.security {
+		@include flex(row, center, center, 10px);
+		.icon {
+			@include width-height(20px, auto);
+			object-fit: contain;
+		}
+	}
+	@media (width >= $queryLg) {
+		flex-direction: row;
+		gap: 0;
+		font-size: 14px;
+	}
+	@media (width >= $queryXl) {
+		padding: 20px 230px;
+	}
+}

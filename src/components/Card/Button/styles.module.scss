@@ -1,0 +1,37 @@
+@import "@/styles/theme.scss";
+
+.btn_confirm {
+	@include width-height(100%, auto);
+	@include flex(row, center, center, 5px);
+	cursor: pointer;
+	border-radius: 30px;
+	padding: 20px;
+	border: none;
+	background: $green;
+	outline: none;
+	color: $white;
+	@include fontSize-fontWeight(14px, 600);
+	text-transform: uppercase;
+	transition: background 200ms ease-in;
+	&:hover {
+		background: #67c94e;
+	}
+	.icon {
+		@include width-height(30px, auto);
+	}
+	@media (width >= $queryXs) {
+		gap: 10px;
+		@include fontSize-fontWeight(18px, 500);
+	}
+}
+.btn_decline {
+	@include width-height(100%, auto);
+	@include fontSize-fontWeight(15px, 500);
+	cursor: pointer;
+	text-transform: uppercase;
+	border: none;
+	background: none;
+	outline: none;
+	text-decoration: underline;
+	color: red;
+}

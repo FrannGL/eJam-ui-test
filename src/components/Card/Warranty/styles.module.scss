@@ -1,0 +1,18 @@
+@import "@/styles/theme.scss";
+
+.container {
+	@include width-height(100%, auto);
+	@include flex(row, center, center, 20px);
+	margin: 20px 0;
+	.img {
+		@include width-height(15%, auto);
+		object-fit: contain;
+	}
+	.leyend {
+		@include fontSize-fontWeight(13px, 400);
+		color: $text_second;
+		span {
+			font-weight: 700;
+		}
+	}
+}

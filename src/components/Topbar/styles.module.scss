@@ -1,0 +1,60 @@
+@import "@/styles/theme.scss";
+
+.container {
+	@include width-height(100%, auto);
+	padding: 15px;
+	background: $bar;
+	.bar {
+		@include flex(row, center, center, 8px);
+		.icon {
+			@include width-height(18px, auto);
+		}
+		.text {
+			@include fontSize-fontWeight(12px, 300);
+			color: $white;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+	.list_container {
+		@include width-height(100%, auto);
+		@include flex(row, space-between, center, 5px);
+		.bar {
+			gap: 10px;
+		}
+		.text {
+			font-size: 12px;
+		}
+	}
+}
+
+@media (width >= $queryLg) {
+	.container {
+		@include flex(column, space-between, center, 8px);
+		.inner_container {
+			@include width-height(100%, auto);
+			max-width: 1440px;
+			.list_container {
+				justify-content: space-between;
+			}
+		}
+	}
+}
+
+@media (width >= $queryXl) {
+	.container {
+		.inner_container {
+			@include flex(row, space-between, center, 8px);
+			.bar {
+				.icon {
+					@include width-height(25px, auto);
+				}
+			}
+			.list_container {
+				.text {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
